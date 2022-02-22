@@ -1,4 +1,3 @@
-from importlib.util import LazyLoader
 from tkinter import * 
 from tkinter import ttk
 from tkinter.font import BOLD
