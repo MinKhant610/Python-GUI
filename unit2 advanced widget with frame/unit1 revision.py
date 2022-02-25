@@ -4,7 +4,8 @@ from tkinter import ttk
 class App:
     def __init__ (self, master):
         master.title ('Python')
-        self.changeLabel(master, 'Hello Tkinter')
+        self.label = ttk.Label (master, text='Hello Tkinter')
+        self.label.pack()
         self.button = ttk.Button(master, text='Change')
         self.button.pack()
         self.button.config(command=self.changeName)
@@ -15,17 +16,12 @@ class App:
         self.spinBox(master)
         self.progressBar(master)
         self.image(master)
-    
-    def changeLabel(self, master, name):
-        self.label = ttk.Label (master, text=name)
-        self.label.pack()
-    
+
     def changeName (self):
         self.label.config(text='Hello Python')
         self.label.config(font=('',20,''), foreground='red', background='black')
 
     def checkBut(self, master):
-        # self.changeLabel(master, 'Following is CheckButton')
         self.c_var = StringVar()
         self.cdub_var = StringVar()
         self.python_var = StringVar()
@@ -81,8 +77,8 @@ class App:
     def image(self, master):
         self.img = PhotoImage (file=r'/home/minkhant/Python GUI/images/bird.png')
         # self.small_img = self.img.subsample(3,3)
-        self.label = ttk.Label(master, image=self.img) #image = self.small_img
-        self.label.pack()
+        self.lab = ttk.Label(master, image=self.img) #image = self.small_img
+        self.lab.pack()
         
 def main () :
     root = Tk()
